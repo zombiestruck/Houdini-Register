@@ -19,9 +19,9 @@ Snippet: https://vimeo.com/317989492
 # Requirements
 
 
-Well first of, you need nodeJS!
+Well first of all, you need nodeJS.
 
-Using npm to install the following dependencies:
+Then use npm to install the following dependencies:
 
     "bcrypt": "^3.0.4",
     "connect-flash": "^0.1.1",
