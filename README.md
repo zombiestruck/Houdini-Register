@@ -33,7 +33,7 @@ Then use npm to install the following dependencies:
     "request": "^2.88.0",
     "sequelize": "^4.42.0"
 
-This registration system is not like a PHP one where you just upload the files to /var/www/html and it'll work. You will need to run this off a port, I suggest reverse proxying with nginx, the default port is 4444.
+This registration system is not like a PHP one where you just upload the files to /var/www/html and it'll work. You will need to run this off a port, I suggest reverse proxying with nginx, the default port is 4444. Execute the register by typing into terminal: `node Boot`
 
 https://www.linode.com/docs/web-servers/nginx/use-nginx-reverse-proxy/
 
