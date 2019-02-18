@@ -1,2 +1,50 @@
-# Flake
-A registration system (my first one i've made), the frontend uses bootstrap as a framework, has some custom CSS styling and custom JS for basic checks from the users end, including: checking whether the user entered 4-12 chars as their username and if it includes any special characters, checks whether the password matches each other and whether it's over 5 chars, checks whether the email is in the correct format (test@test.com), if these fields are not fulfilled then the registration won't process anything in the backend until these are done. The backend is coded all in NodeJS, using express.js for collecting post requests, using Sequelize for ORM based database transcations, many other modules are used for different purposes. The backend will also check whether the username and email already exists, as well as hash passwords in bCRYPT. The register also uses recaptcha v3 to prevent bots, all configurations are in one file (Config.js) and everything is ran from Boot.js. Credit to those who helped me learn and understand nodeJS better. This is going to be an open-source register, this may not be the best register out there but it's one of my first projects. Feel free to fork or use whatever you need (: ~ ro.
+# Flake - A CPPS Registration System. 
+
+A registration system, created for Houdini's database structure. 
+
+The frontend uses bootstrap as a framework.
+
+IN DETAIL: Has some custom CSS styling and custom JS for basic checks from the users end, including: checking whether the user entered 4-12 chars as their username and if it includes any special characters, checks whether the password matches each other and whether it's over 5 chars, checks whether the email is in the correct format (test@test.com), if these fields are not fulfilled then the registration won't process anything in the backend until these are done.
+
+The backend is coded all in NodeJS.
+
+IN DETAIL: Using express.js for collecting post requests, using Sequelize for ORM based database transcations, many other modules are used for different purposes. The backend will also check whether the username and email already exists, as well as hash passwords in bCRYPT. The register also uses recaptcha v3 to prevent bots, all configurations are in one file (Config.js) and everything is ran from Boot.js. 
+
+This is going to be an open-source register, this may not be the best register out there but it's one of my first projects. Feel free to fork or use whatever you need. ~ ro.
+
+
+Snippet: https://vimeo.com/317989492
+
+
+# Requirements
+
+
+Well first of, you need nodeJS!
+
+Using npm to install the following dependencies:
+
+    "bcrypt": "^3.0.4",
+    "connect-flash": "^0.1.1",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "express-recaptcha": "^4.1.1",
+    "md5": "^2.2.1",
+    "mysql2": "^1.6.5",
+    "request": "^2.88.0",
+    "sequelize": "^4.42.0"
+
+This registration system is not like a PHP one where you just upload the files to /var/www/html and it'll work. You will need to run this off a port, I suggest reverse proxying with nginx, the default port is 4444.
+
+https://www.linode.com/docs/web-servers/nginx/use-nginx-reverse-proxy/
+
+You also need to configure the details for MySQL in Config.js, you can also change the custom messages when an error pops up. This register has been written to use recaptcha v3, so you will have to get your own recaptcha keys from google. Place the secret key in Config.js and the site key in index.html
+
+https://i.imgur.com/8seD36D.png
+
+If you are considering modifying this for your own preferable database structure, go for it. Make sure you edit Structure.js and Create.js for it. Feel free to let me know what I can improve on.
+
+
+CURRENT STATUS: Waiting for Hawk to rewrite Dotes CP Disney Template to take post requests so we can use it as the frontend of Flake. AKA to look like this instead of the generic, basic bootstrap template: https://i.imgur.com/cnrl4E3.png. Until then, i'll be writing a functional manager for Houdini in a similar way to how I written this.
+
+
+
