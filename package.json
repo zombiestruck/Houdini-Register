@@ -1,0 +1,35 @@
+{
+  "name": "project-flake",
+  "version": "1.0.0",
+  "description": "A registration system (my first one i've made), the frontend uses bootstrap as a framework, has some custom CSS styling and custom JS for basic checks from the users end, including: checking whether the user entered 4-12 chars as their username and if it includes any special characters, checks whether the password matches each other and whether it's over 5 chars, checks whether the email is in the correct format (test@test.com), if these fields are not fulfilled then the registration won't process anything in the backend until these are done. The backend is coded all in NodeJS, using express.js for collecting post requests, using Sequelize for ORM based database transcations, many other modules are used for different purposes. The backend will also check whether the username and email already exists, as well as hash passwords in bCRYPT. The register also uses recaptcha v3 to prevent bots, all configurations are in one file (Config.js) and everything is ran from Boot.js. Credit to those who helped me learn and understand nodeJS better. This is going to be an open-source register, this may not be the best register out there but it's one of my first projects. Feel free to fork or use whatever you need (: ~ ro.",
+  "main": "Boot.js",
+  "scripts": {
+    "test": "start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/rsakeys/Flake.git"
+  },
+  "keywords": [
+    "register",
+    "as2",
+    "houdini",
+    "ro"
+  ],
+  "author": "ro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rsakeys/Flake/issues"
+  },
+  "homepage": "https://github.com/rsakeys/Flake#readme",
+  "dependencies": {
+    "bcrypt": "^3.0.4",
+    "connect-flash": "^0.1.1",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "md5": "^2.2.1",
+    "mysql2": "^1.6.5",
+    "request": "^2.88.0",
+    "sequelize": "^4.42.0"
+  }
+}
