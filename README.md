@@ -44,7 +44,7 @@ https://i.imgur.com/8seD36D.png
 If you are considering modifying this for your own preferable database structure, go for it. Make sure you edit Structure.js and Create.js for it. Feel free to let me know what I can improve on.
 
 
-CURRENT STATUS: Waiting for Hawk to rewrite Dotes CP Disney Template to take post requests so we can use it as the frontend of Flake. AKA to look like this instead of the generic, basic bootstrap template: https://i.imgur.com/cnrl4E3.png. Until then, i'll be writing a functional manager for Houdini in a similar way to how I written this.
+CURRENT STATUS: Waiting for Hawk to rewrite Dotes CP Disney Template to take post requests so we can use it as the frontend of Flake. AKA to look like this instead of the generic, basic bootstrap template: https://i.imgur.com/cnrl4E3.png. 
 
 
 
