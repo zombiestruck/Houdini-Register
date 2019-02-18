@@ -33,15 +33,17 @@ Then use npm to install the following dependencies:
     "request": "^2.88.0",
     "sequelize": "^4.42.0"
 
-This registration system is not like a PHP one where you just upload the files to /var/www/html and it'll work. You will need to run this off a port, I suggest reverse proxying with nginx, the default port is 4444. Execute the register by typing into terminal: `node Boot`
+This registration system is not like a PHP one where you just upload the files to /var/www/html and it'll work. You will need to run this off a port, I suggest reverse proxying with nginx, the default port is 4444. 
 
 https://www.linode.com/docs/web-servers/nginx/use-nginx-reverse-proxy/
 
-You also need to configure the details for MySQL in Config.js, you can also change the custom messages when an error pops up. This register has been written to use recaptcha v3, so you will have to get your own recaptcha keys from google. Place the secret key in Config.js and the site key in index.html
+You also need to configure the details for MySQL in Config.js, you can also change the custom messages when an error pops up. This register has been written to use recaptcha v3, so you will have to get your own recaptcha keys from google. Place the secret key in Config.js and the site key in index.html.
 
 https://i.imgur.com/8seD36D.png
 
 If you are considering modifying this for your own preferable database structure, go for it. Make sure you edit Structure.js and Create.js for it. Feel free to let me know what I can improve on.
+
+Simply execute the register to listen on port 4444 by typing into terminal/PuTTy: `node Boot`
 
 
 CURRENT STATUS: Waiting for Hawk to rewrite Dotes CP Disney Template to take post requests so we can use it as the frontend of Flake. AKA to look like this instead of the generic, basic bootstrap template: https://i.imgur.com/cnrl4E3.png. 
