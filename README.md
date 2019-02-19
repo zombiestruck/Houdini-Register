@@ -46,7 +46,7 @@ If you are considering modifying this for your own preferable database structure
 Simply execute the register to listen on port 4444 by typing into terminal/PuTTy: `node Boot`
 
 
-CURRENT STATUS: Waiting for Hawk to rewrite Dotes CP Disney Template to take post requests so we can use it as the frontend of Flake. AKA to look like this instead of the generic, basic bootstrap template: https://i.imgur.com/cnrl4E3.png. 
+CURRENT STATUS: Waiting for Hawk to rewrite Dotes CP Disney Template to take post requests so we can use it as the frontend of Flake. So it can look like this https://i.imgur.com/cnrl4E3.png instead of the generic, basic bootstrap template that we have.
 
 
 
