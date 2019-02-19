@@ -1,5 +1,5 @@
 const CONFIG = require('../Config');
-const Sequelize = require('sequelize'); // for operators
+const Sequelize = require('sequelize'); 
 
 var Database = new Sequelize({
     host: CONFIG.MYSQL.HOST,
