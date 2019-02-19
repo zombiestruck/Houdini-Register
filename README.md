@@ -1,6 +1,6 @@
 # Flake - A CPPS Registration System. 
 
-A registration system, created for Houdini's database structure. 
+A complete registration system, created for Houdini's database structure. 
 
 The frontend uses bootstrap as a framework.
 
