@@ -37,7 +37,7 @@ This registration system is not like a PHP one where you just upload the files t
 
 https://www.linode.com/docs/web-servers/nginx/use-nginx-reverse-proxy/
 
-You also need to configure the details for MySQL in Config.js, you can also change the custom messages when an error pops up. This register has been written to use recaptcha v3, so you will have to get your own recaptcha keys from google. Place the secret key in Config.js and the site key in index.html.
+You also need to configure the details for MySQL in Config.js, you can also change the custom error/success messages in there. This register has been written to use recaptcha v3, so you will have to get your own recaptcha keys from google. Place the secret key in Config.js and the site key in index.html.
 
 https://i.imgur.com/8seD36D.png
 
