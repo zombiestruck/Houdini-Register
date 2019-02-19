@@ -4,7 +4,7 @@ A registration system, created for Houdini's database structure.
 
 The frontend uses bootstrap as a framework.
 
-IN DETAIL: Has some custom CSS styling and custom JS for basic checks from the users end, including: checking whether the user entered 4-12 chars as their username and if it includes any special characters, checks whether the password matches each other and whether it's over 5 chars, checks whether the email is in the correct format (test@test.com), if these fields are not fulfilled then the registration won't process anything in the backend until these are done.
+IN DETAIL: Has some custom CSS styling and custom JS for basic checks from the users end, including: checking whether the user entered 4-12 chars as their username and if it includes any special characters, checks whether the password matches each other and whether it's over 5 chars, checks whether the email is in the correct format (test@test.com), if these fields are not fulfilled then the registration won't process anything in the backend until these are done. It also renders EJS to display a custom success or error message on the page.
 
 The backend is coded all in NodeJS.
 
