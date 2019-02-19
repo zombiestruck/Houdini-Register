@@ -12,8 +12,7 @@ const CONFIG = {
     ERROR_MSGS: {
         USERNAME_TAKEN: 'This username has already been taken, please choose another!',
         EMAIL_TAKEN: 'This email is already in use!',
-        CAPTCHA: 'The captcha detects that you may be a bot!',
-        ERROR: 'Something went wrong during this registration!' // change custom messages if you want
+        CAPTCHA: 'The captcha detects that you may be a bot!' // change the custom messages that display if you want..
     },
     SUCCESS: {
         COMPLETE: 'You have successfully registered!'
