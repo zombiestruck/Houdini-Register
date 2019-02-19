@@ -8,7 +8,7 @@ IN DETAIL: Has some custom CSS styling and custom JS for basic checks from the u
 
 The backend is coded all in NodeJS.
 
-IN DETAIL: Using express.js for collecting post requests, using Sequelize for ORM based database transcations, many other modules are used for different purposes. The backend will also check whether the username and email already exists, as well as hash passwords in bCRYPT. The register also uses recaptcha v3 to prevent bots, all configurations are in one file (Config.js) and everything is ran from Boot.js. 
+IN DETAIL: Using express.js for collecting post requests, using Sequelize for database transcations, many other modules are used for different purposes. The backend will also check whether the username and email already exists, as well as hash passwords in bCRYPT. The register also uses recaptcha v3 to prevent bots, all configurations are in one file (Config.js) and everything is ran from Boot.js. 
 
 This is going to be an open-source register, this may not be the best register out there but it's one of my first projects. Feel free to fork or use whatever you need. ~ ro.
 
