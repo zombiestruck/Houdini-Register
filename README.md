@@ -41,7 +41,7 @@ You also need to configure the details for MySQL in Config.js, you can also chan
 
 https://i.imgur.com/8seD36D.png
 
-If you are considering modifying this for your own preferable database structure, go for it. Make sure you edit Structure.js and Create.js for it. Feel free to let me know what I can improve on.
+Edit Structure.js and Create.js IF you want to change the database structure for something other than Houdini.
 
 Simply execute the register to listen on port 4444 by typing into terminal/PuTTy: `node Boot`
 
