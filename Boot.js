@@ -24,7 +24,6 @@ Register.post('/', async function(request, response) {
     recaptcha_url += "remoteip=" + request.connection.remoteAddress;
     Request(recaptcha_url, function(error, resp, body) { 
     var recaptcha = JSON.parse(body);
-    recaptcha.success = true;
     if (recaptcha.success){
         Create.AttemptInsertUser(username, password, email, response);
     }
