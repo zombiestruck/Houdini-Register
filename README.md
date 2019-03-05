@@ -8,29 +8,6 @@ The frontend uses bootstrap as a framework.
 IN DETAIL: Has some custom CSS styling and custom JS for basic checks from the users end, including: checking whether the user entered any special characters, checks whether the password matches each other and whether it's over 5 chars, checks whether the email is in the correct format (test@test.com), if these fields are not fulfilled then the registration won't process anything in the backend until these are done. It also renders EJS to display a custom success or error message on the page.
 
 The backend is coded all in NodeJS.
-
-IN DETAIL: Using express.js for collecting post requests, using Sequelize for database transcations, many other modules are used for different purposes. The backend will also check whether the username and email already exists, as well as hash passwords in bCRYPT. The register also uses recaptcha v3 to prevent bots, all configurations are in one file (Config.js) and everything is ran from Boot.js. 
-
-This is going to be an open-source registration, all code was created by me ~ ro.
-
-
-Snippet: https://vimeo.com/317989492
-
-
-# Requirements
-
-
-Well first of all, you need nodeJS.
-
-Then use npm to install the following dependencies:
-
-    "bcrypt": "^3.0.4",
-    "connect-flash": "^0.1.1",
-    "ejs": "^2.6.1",
-    "express": "^4.16.4",
-    "express-recaptcha": "^4.1.1",
-    "md5": "^2.2.1",
-    "mysql2": "^1.6.5",
     "request": "^2.88.0",
     "sequelize": "^4.42.0"
 
@@ -40,9 +17,12 @@ https://www.linode.com/docs/web-servers/nginx/use-nginx-reverse-proxy/
 
 You also need to configure the details for MySQL in Config.js, you can also change the custom error/success messages in there. This register has been written to use recaptcha v3, so you will have to get your own recaptcha keys from google. Place the secret key in Config.js and the site key in index.html.
 
+
 https://i.imgur.com/8seD36D.png
 
 Edit Structure.js and Create.js IF you want to change the database structure for something other than Houdini.
+
+If you are using a different dialect, for example mariadb then you should change that in DatabaseCon.js instead of the default mysql.
 
 Simply execute the register to listen on port 4444 by typing into terminal/PuTTy: `node Boot`
 
