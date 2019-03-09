@@ -8,8 +8,7 @@ The frontend uses bootstrap as a framework.
 IN DETAIL: Has some custom CSS styling and custom JS for basic checks from the users end, including: checking whether the user entered any special characters, checks whether the password matches each other and whether it's over 5 chars, checks whether the email is in the correct format (test@test.com), if these fields are not fulfilled then the registration won't process anything in the backend until these are done. It also renders EJS to display a custom success or error message on the page.
 
 The backend is coded all in NodeJS.
-    "request": "^2.88.0",
-    "sequelize": "^4.42.0"
+
 
 This registration system is not like a PHP one where you just upload the files to /var/www/html and it'll work. You will need to run this off a port, I suggest reverse proxying with nginx, the default port is 4444. 
 
