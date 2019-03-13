@@ -27,16 +27,7 @@
     margin-bottom: 15px;
     box-sizing:border-box;
 }
-.create-account input[type="submit"] {
-    width: 100%;
-    padding: 15px;
-    background-color: #339985;
-    border: 0;
-    box-sizing: border-box;
-    cursor: pointer;
-    font-weight: bold;
-    color: #ffffff;
-}
+
 .emu {
     -webkit-animation-duration: 1s;
     animation-duration: 1s;

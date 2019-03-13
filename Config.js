@@ -4,7 +4,7 @@ const CONFIG = {
     },
     MYSQL: {
         HOST: 'localhost',
-        USER: '',
+        USER: 'root',
         PASS: '',
         PORT: 3306,
         DATABASE: 'Houdini'
@@ -18,6 +18,7 @@ const CONFIG = {
         COMPLETE: 'You have successfully registered!'
     },
     CAPTCHA: {
+        SITE_KEY: '', // register site key at google recaptcha (v3)
         SECRET_KEY: '' // register secret key at google recaptcha (v3)
     }
 };
