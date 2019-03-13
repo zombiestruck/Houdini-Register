@@ -13,7 +13,7 @@ IN DETAIL: Using express.js for collecting post requests, using Sequelize for da
 This is going to be an open-source register, this may not be the best register out there but it's one of my first projects. Feel free to fork or use whatever you need. ~ ro.
 
 
-Snippet: https://vimeo.com/317989492
+Snippet: https://vimeo.com/323518923
 
 
 # Requirements
@@ -40,9 +40,9 @@ This registration system is not like a PHP one where you just upload the files t
 
 https://www.linode.com/docs/web-servers/nginx/use-nginx-reverse-proxy/
 
-You also need to configure the details for MySQL in Config.js, you can also change the custom error/success messages in there. This register has been written to use recaptcha v3, so you will have to get your own recaptcha keys from google. Place the secret key in Config.js and the site key in index.html.
 
-https://i.imgur.com/8seD36D.png
+All configuration is handled within Config.js, so that's the only file you have to edit. Configure the MySQL details in there, you may change the error and success messages if you wish, this register uses recaptcha v3 so you will need to register a site and secret key under whatever domain you are using it for.
+
 
 Edit Structure.js and Create.js IF you want to change the database structure for something other than Houdini.
 
