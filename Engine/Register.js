@@ -46,7 +46,7 @@ class Register{
 
 
     async checkRow(row, value){
-        var userCount = await this.database.penguin.count({ where: {[`${row}`]: [`${value}`]} });
+        let userCount = await this.database.penguin.count({ where: {[`${row}`]: [`${value}`]} });
         if (userCount != 0){ 
             return true; 
         }
