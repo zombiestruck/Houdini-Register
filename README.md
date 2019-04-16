@@ -13,7 +13,7 @@ IN DETAIL: Using express.js for collecting post requests, using Sequelize for da
 This is going to be an open-source register, this may not be the best register out there but it's one of my first projects. Feel free to fork or use whatever you need. ~ ro.
 
 
-Snippet: https://vimeo.com/323518923
+Snippet: https://vimeo.com/330657005
 
 
 # Requirements
@@ -23,15 +23,15 @@ Well first of all, you need nodeJS.
 
 Then use npm to install the following dependencies:
 
-    "bcrypt": "^3.0.4",
+    "bcrypt": "^3.0.6",
+    "colors": "^1.3.3",
     "connect-flash": "^0.1.1",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
-    "express-recaptcha": "^4.1.1",
     "md5": "^2.2.1",
     "mysql2": "^1.6.5",
     "request": "^2.88.0",
-    "sequelize": "^4.42.0"
+    "sequelize": "^5.5.0"
     
  
  Install them individually or just run the command `npm install` and it will install all of them for you.
@@ -44,9 +44,13 @@ https://www.linode.com/docs/web-servers/nginx/use-nginx-reverse-proxy/
 All configuration is handled within Config.js, so that's the only file you have to edit. Configure the MySQL details in there, you may change the error and success messages if you wish, this register uses recaptcha v3 so you will need to register a site and secret key under whatever domain you are using it for.
 
 
-Edit Structure.js and Create.js IF you want to change the database structure for something other than Houdini.
+Edit /Data/Penguin.js and Register.js IF you want to change the database structure for something other than Houdini.
 
 Simply execute the register to listen on port 4444 by typing into terminal/PuTTy: `node Boot`
+
+LATEST UPDATE: 
+
+ - tidied up code, used classes etc.
 
 
 
