@@ -15,6 +15,8 @@ This is going to be an open-source register, this may not be the best register o
 
 Snippet: https://vimeo.com/330657005
 
+NOTE: Credit to Kevin, for the colour picker feature from his PHP register in Sweater.
+
 
 # Requirements
 
@@ -50,7 +52,7 @@ Simply execute the register to listen on port 4444 by typing into terminal/PuTTy
 
 LATEST UPDATE: 
 
- - tidied up code, used classes etc.
+ - Users may choose their penguins colour upon registration.
 
 
 
