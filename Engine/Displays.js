@@ -31,6 +31,10 @@ class Displays{
         if(this.type == 'email_taken'){
             return {error_msg : 'This email is already taken, please try another one.', success_msg: '', site_key: this.site_key}
         }
+        
+        if(this.type == 'bad_name'){
+            return {error_msg : 'This username is not allowed, please try another!', success_msg: '', site_key: this.site_key}
+        }
     }
 }
 
