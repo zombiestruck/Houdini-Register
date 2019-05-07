@@ -13,6 +13,7 @@ class Register{
         this.color = details.body.penguinColor;
         this.response = response;
         this.database = database;
+        this.badNames = ['Rockhopper', 'fuck'] /* Add mascot names, swear words etc whatever you don't want users to have as a username */
         this.createUser();
     }
 
@@ -24,11 +25,15 @@ class Register{
         else if(await this.checkRow(`Email`, this.email)){
             this.response.render('index', new Displays('email_taken').displaySite());
         }
+        
+        else if(this.badNames.includes(this.username)){
+            this.response.render('index', new Displays('bad_name').displaySite());
+        }
 
         else{
             let password = await this.bcrypt();
             this.color = this.color.replace('/colors/', '');
-            await this.database.penguin.create({ID: null, Username: this.username, Nickname: this.username, Approval: 1, Password: password, Email: this.email, Active: 1, Color: this.color});
+            await this.database.penguin.create({ID: null, Username: this.username, Nickname: this.username, Approval: 0, Password: password, Email: this.email, Active: 1, Color: this.color});
             this.response.render('index', new Displays('success').displaySite());
         }
     }
