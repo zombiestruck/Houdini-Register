@@ -33,7 +33,7 @@ class Displays{
         }
         
         if(this.type == 'bad_name'){
-            return {error_msg : 'This username is not allowed, please try another!', success_msg: '', site_key: this.site_key}
+            return {error_msg : 'This username is not allowed, please try another one.', success_msg: '', site_key: this.site_key}
         }
     }
 }
