@@ -20,7 +20,7 @@ preview: https://vimeo.com/330657005
  - upload your register somewhere (apart from the web-server of course!), use `cd` to go to the directory wherever it is placed. 
  - Once you are in the directory, you can run `npm install` and it will download all the dependencies you need for this register to work. 
  - Now all you have to do is edit Config.js.
- - Run the manager from terminal using the command `node Boot`. 
+ - Run the register from terminal using the command `node Boot`. 
  - Party.
 
 
