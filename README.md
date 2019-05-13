@@ -26,10 +26,7 @@ preview: https://vimeo.com/330657005
 
 # Requirements
 
-
-Well first of all, you need nodeJS.
-
-Then just execute `npm install` to install the dependencies all at once.
+Just execute `npm install` to install the dependencies all at once.
 
     "bcrypt": "^3.0.6",
     "colors": "^1.3.3",
