@@ -13,13 +13,23 @@ written by ~ ro, feel free to fork or use whatever code/assets you want from thi
 
 preview: https://vimeo.com/330657005
 
+# How to use?
+
+
+ - install node.js on your VPS or laptop.
+ - upload your register somewhere (apart from the web-server of course!), use `cd` to go to the directory wherever it is placed. 
+ - Once you are in the directory, you can run `npm install` and it will download all the dependencies you need for this register to work. 
+ - Now all you have to do is edit Config.js.
+ - Run the manager from terminal using the command `node Boot`. 
+ - Party.
+
 
 # Requirements
 
 
 Well first of all, you need nodeJS.
 
-Then use npm to install the following dependencies:
+Then just execute `npm install` to install the dependencies all at once.
 
     "bcrypt": "^3.0.6",
     "colors": "^1.3.3",
@@ -31,20 +41,11 @@ Then use npm to install the following dependencies:
     "request": "^2.88.0",
     "sequelize": "^5.5.0"
     
- 
- Install them individually or just run the command `npm install` and it will install all of them for you.
+- The only file you have to edit is Config.js, what you need to edit in there is your MySQL details.
 
-This registration system is not like a PHP one where you just upload the files to /var/www/html and it'll work. You will need to run this off a port, I suggest reverse proxying with nginx, the default port is 4444. 
+- Register your recaptcha keys from google recaptcha (v3). Add your site and secret key here: https://i.imgur.com/MBq4Oxm.png
 
-https://www.linode.com/docs/web-servers/nginx/use-nginx-reverse-proxy/
-
-
-All configuration is handled within Config.js, so that's the only file you have to edit. Configure the MySQL details in there, you may change the error and success messages if you wish, this register uses recaptcha v3 so you will need to register a site and secret key under whatever domain you are using it for.
-
-
-Edit /Data/Penguin.js and Register.js IF you want to change the database structure for something other than Houdini.
-
-Simply execute the register to listen on port 4444 by typing into terminal/PuTTy: `node Boot`.
+- When running this on your site, you need your sub-domain to be proxying off port 4444 (or whatever port you set in Config.js). So edit your nginx or apache configuration, add this line `proxy_pass http://localhost:3000/;`. This might be helpful: https://www.linode.com/docs/web-servers/nginx/use-nginx-reverse-proxy/
 
 LATEST UPDATE: 
 
