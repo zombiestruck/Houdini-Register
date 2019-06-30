@@ -34,6 +34,8 @@ class Register{
             let password = await this.bcrypt();
             this.color = this.color.replace('/colors/', '');
             await this.database.penguin.create({ID: null, Username: this.username, Nickname: this.username, Approval: 0, Password: password, Email: this.email, Active: 1, Color: this.color});
+            let Data = await this.database.penguin.findOne({where: {Username: this.username}});
+            await this.database.inventory.create({PenguinID: Data.ID, ItemID: this.color});
             this.response.render('index', new Displays('success').displaySite());
         }
     }
