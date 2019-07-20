@@ -1,8 +1,20 @@
 {
-  "name": "flake_register",
-  "version": "1.0.0",
-  "description": "A registration system written in nodeJS.",
+  "name": "flake-register",
+  "version": "2.0.0",
+  "description": "A registration system for Houdini",
   "main": "Boot.js",
+  "dependencies": {
+    "bcrypt": "^3.0.6",
+    "colors": "^1.3.3",
+    "connect-flash": "^0.1.1",
+    "ejs": "^2.6.2",
+    "express": "^4.17.1",
+    "md5": "^2.2.1",
+    "mysql2": "^1.6.5",
+    "request": "^2.88.0",
+    "sequelize": "^5.10.1"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,7 +23,10 @@
     "url": "git+ssh://git@github.com/rsakeys/Flake-Register.git"
   },
   "keywords": [
+    "flake",
+    "node",
     "register",
+    "houdini",
     "cpps"
   ],
   "author": "ro",
@@ -19,16 +34,5 @@
   "bugs": {
     "url": "https://github.com/rsakeys/Flake-Register/issues"
   },
-  "homepage": "https://github.com/rsakeys/Flake-Register#readme",
-  "dependencies": {
-    "bcrypt": "^3.0.6",
-    "colors": "^1.3.3",
-    "connect-flash": "^0.1.1",
-    "ejs": "^2.6.1",
-    "express": "^4.16.4",
-    "md5": "^2.2.1",
-    "mysql2": "^1.6.5",
-    "request": "^2.88.0",
-    "sequelize": "^5.5.0"
-  }
+  "homepage": "https://github.com/rsakeys/Flake-Register#readme"
 }
