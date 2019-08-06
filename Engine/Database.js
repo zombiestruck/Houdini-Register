@@ -28,6 +28,7 @@ class Database{
 
         this.penguin = await this.databaseConnection.import('../Data/Penguin');
         this.inventory = await this.databaseConnection.import('../Data/Inventory');
+        this.activation = await this.databaseConnection.import('../Data/Activation');
     }
 
 

@@ -35,6 +35,14 @@ class Displays{
         if(this.type == 'bad_name'){
             return {error_msg : 'This username is not allowed, please try another one.', success_msg: '', site_key: this.site_key}
         }
+
+        if(this.type == 'activated'){
+            return {error_msg : '', success_msg: 'Congratulations, you have activated your account, you may play now!', site_key: this.site_key}
+        }
+
+        if(this.type == 'not_found'){
+            return {error_msg : 'This activation code was not found, please re-register or contact administration.', success_msg: '', site_key: this.site_key}
+        }
     }
 }
 

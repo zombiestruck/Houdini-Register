@@ -14,6 +14,11 @@ class Engine{
     constructor(config){
         this.port = config.http.port;
         this.secret_key = config.http.secret_key;
+        this.activation = config.activation.activate;
+        this.gmail_user = config.activation.gmail_user;
+        this.gmail_pass = config.activation.gmail_pass;
+        this.cpps_name = config.activation.cpps_name;
+        this.sub_domain = config.activation.sub_domain;
         this.database = new Database(config);
         this.register = express();
         this.setup();
@@ -47,12 +52,21 @@ class Engine{
             _request(recaptcha_url, (error, resp, body) => {
                 let recaptcha = JSON.parse(body);
                 if (recaptcha.success){
-                    new Register(request, response, this.database)
+                    new Register(request, response, this).createUser();
                 }
                 else{
                     response.render('index', new Displays('incorrect_captcha').displaySite());
                 }
             });
+        });
+
+        this.register.get('/activate/(:id)', async (request, response) => {
+            if(this.activation == 1){
+                new Register(request, response, this).activateUser();
+            }
+            else{
+                response.redirect('/')
+            }
         });
     }
 }
