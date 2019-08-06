@@ -22,21 +22,15 @@ preview: https://vimeo.com/330657005
 
 Just execute `npm install` to install the dependencies all at once.
 
-    "bcrypt": "^3.0.6",
-    "colors": "^1.3.3",
-    "connect-flash": "^0.1.1",
-    "ejs": "^2.6.1",
-    "express": "^4.16.4",
-    "md5": "^2.2.1",
-    "mysql2": "^1.6.5",
-    "request": "^2.88.0",
-    "sequelize": "^5.5.0"
-    
 - The only file you have to edit is Config.js, what you need to edit in there is your MySQL details.
 
 - Register your recaptcha keys from google recaptcha (v3). Add your site and secret key here: https://i.imgur.com/MBq4Oxm.png
 
 - When running this on your site, you need your sub-domain to be proxying off port 4444 (or whatever port you set in Config.js). So edit your nginx or apache configuration, add this line `proxy_pass http://localhost:3000/;`. This might be helpful: https://www.linode.com/docs/web-servers/nginx/use-nginx-reverse-proxy/
+
+- Optional email activation, you can ignore it and let it not work by leaving activation to 0 in Config.js. But for it to work, you will need to set activation to 1, you need to be willing to give a working gmail account, probably one dedicated to the CPPS. You then need to fill out the following details below: https://snag.gy/PiWmxs.jpg. If done correctly, with no error showing in terminal it should send an activation email looking like this: https://snag.gy/P3a8QG.jpg.
+
+Any issues, just PM me on Discord @ ro#0008.
 
 
 
