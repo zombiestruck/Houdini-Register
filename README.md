@@ -30,7 +30,7 @@ Just execute `npm install` to install the dependencies all at once.
 
 - Optional email activation, you can ignore it and let it not work by leaving activation to 0 in Config.js. But for it to work, you will need to set activation to 1, you need to be willing to give a working gmail account, probably one dedicated to the CPPS. You then need to fill out the following details below: https://snag.gy/PiWmxs.jpg. If done correctly, with no error showing in terminal it should send an activation email looking like this: https://snag.gy/P3a8QG.jpg.
 
-Any issues, just PM me on Discord @ ro#0008.
+Any issues or suggestions, just email me: root@rsakeys.org
 
 
 
