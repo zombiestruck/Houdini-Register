@@ -13,7 +13,7 @@ preview: https://vimeo.com/330657005
  - install node.js on your VPS or laptop.
  - upload your register somewhere (apart from the web-server of course!), use `cd` to go to the directory wherever it is placed. 
  - Once you are in the directory, you can run `npm install` and it will download all the dependencies you need for this register to work. 
- - Now all you have to do is edit Config.js.
+ - Now all you have to do is edit Configuration.js.
  - Run the register from terminal using the command `node Boot`. 
  - Party.
 
@@ -22,7 +22,7 @@ preview: https://vimeo.com/330657005
 
 Just execute `npm install` to install the dependencies all at once.
 
-- The only file you have to edit is Config.js, what you need to edit in there is your MySQL details.
+- The only file you have to edit is Configuration.js, leave everything else to be otherwise it's going to become a bit complicated.
 
 - Register your recaptcha keys from google recaptcha (v3). Add your site and secret key here: https://i.imgur.com/MBq4Oxm.png
 
