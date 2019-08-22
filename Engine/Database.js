@@ -2,11 +2,10 @@ const sequelize = require('sequelize');
 const log = require('../Console');
 const Base = require('../Configuration'); 
 
- /* Yes I did decide to put all database transactions under a try and catch statement, rather than use the normal ORM */
-
 class Database extends Base{
     constructor(){
         super();
+        this.connection = false;
     }
 
     async connect(){
@@ -23,10 +22,30 @@ class Database extends Base{
                 freezeTableName: true
             }
         });
+        
+        await this.authentication();
+        this.import();
+    }
 
-        this.penguin = await this.databaseConnection.import('../Data/Penguin');
-        this.inventory = await this.databaseConnection.import('../Data/Inventory');
-        this.activation = await this.databaseConnection.import('../Data/Activation');
+    async import(){
+        if(this.connection){
+            this.penguin = await this.databaseConnection.import('../Data/Penguin');
+            this.inventory = await this.databaseConnection.import('../Data/Inventory');
+            this.activation = await this.databaseConnection.import('../Data/Activation');
+            log.success(`Database connection successfully made to ${this.database_name}`)
+        }
+    }
+
+    async authentication(){
+        try{
+            await this.databaseConnection.authenticate();
+            this.connection = true;
+        }
+        catch(e){
+            /* log.crash(e) */
+            log.alert(`The database connection to ${this.database_name} has failed.`)
+            log.alert(`Please consider reviewing the database details provided in Configuration.js`)
+        }
     }
 
     async execute(table, type, query){

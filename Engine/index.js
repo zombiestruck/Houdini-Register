@@ -43,10 +43,6 @@ class Engine extends Base{
             new Register(request, response, this.database).identify();
         });
 
-        this.flake.get(`/(:link)`, async (request, response) => {
-            new Register(request, response, this.database).identify();
-        });
-
         this.flake.get(`/(:link)/(:value)`, async (request, response) => {
             new Register(request, response, this.database).identify();
         });
