@@ -59,16 +59,16 @@ class Register extends Base{
         }
     }
 
-    getHash(){
+    async bcrypt(){
         let MD5 = md5(this.password).toUpperCase(); 
         let password = MD5.substr(16, 16) + MD5.substr(0, 16);  
         password += 'houdini'; 
         password += 'Y(02.>\'H}t":E1';
         password = md5(password);
-        let hash = password.substr(16, 16) + password.substr(0, 16);
-        return hash;
+        password = password.substr(16, 16) + password.substr(0, 16);
+        let bcrypt_pw = await bcrypt.hash(password, 12);
+        return bcrypt_pw;
     }
-
 
     execute(){
         let recaptcha_url = this.captcha.form_url();
@@ -85,18 +85,6 @@ class Register extends Base{
         for (let body in this.request.body)
             this[body] = this.request.body[body];
     }
-
-    async bcrypt(){
-        let MD5 = md5(this.password).toUpperCase(); 
-        let password = MD5.substr(16, 16) + MD5.substr(0, 16);  
-        password += 'houdini'; 
-        password += 'Y(02.>\'H}t":E1';
-        password = md5(password);
-        password = password.substr(16, 16) + password.substr(0, 16);
-        let bcrypt_pw = await bcrypt.hash(password, 12);
-        return bcrypt_pw;
-    }
-
 }
 
 module.exports = Register;
