@@ -1,5 +1,4 @@
 const sequelize = require('sequelize');
-const log = require('../Console');
 const Base = require('../Configuration'); 
 
 class Database extends Base{
@@ -32,7 +31,7 @@ class Database extends Base{
             this.penguin = await this.databaseConnection.import('../Data/Penguin');
             this.inventory = await this.databaseConnection.import('../Data/Inventory');
             this.activation = await this.databaseConnection.import('../Data/Activation');
-            log.success(`Database connection successfully made to ${this.database_name}`)
+            this.log.success(`Database connection successfully made to ${this.database_name}`)
         }
     }
 
@@ -43,8 +42,8 @@ class Database extends Base{
         }
         catch(e){
             /* log.crash(e) */
-            log.alert(`The database connection to ${this.database_name} has failed.`)
-            log.alert(`Please consider reviewing the database details provided in Configuration.js`)
+            this.log.alert(`The database connection to ${this.database_name} has failed.`)
+            this.log.alert(`Please consider reviewing the database details provided in Configuration.js`)
         }
     }
 
@@ -59,8 +58,8 @@ class Database extends Base{
             }
         }
         catch(e){
-            /* log.crash(e); */
-            log.crash(`FILE: Engine/Database.js | LINE: 43`); 
+            /* this.log.crash(e); */
+            this.log.crash(`FILE: Engine/Database.js | LINE: 43`); 
         }
     }
 
@@ -71,7 +70,7 @@ class Database extends Base{
         }
         catch(e){
             /* log.crash(e); */
-            log.crash(`FILE: Engine/Database.js | LINE: 54`);
+            this.log.crash(`FILE: Engine/Database.js | LINE: 54`);
         }
     }
 }

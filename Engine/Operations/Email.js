@@ -1,18 +1,14 @@
 "use strict";
 
 const nodemailer = require("nodemailer");
-const log = require('../Console');
-
-const Base = require('../Configuration'); 
+const Base = require('../../Configuration'); 
 
 class Email extends Base{
-    constructor(database) {
+    constructor(request, response, database) {
         super();
+        this.request = request; 
+        this.response = response;  
         this.database = database;
-    }
-
-    get_activation_setting(){
-        return this.activation;
     }
 
     async handle(user){
@@ -23,17 +19,20 @@ class Email extends Base{
         }
     }
 
-    async verify_email(id){
+    async execute(){
+        let id = this.request.params.value;
         let user = await this.database.execute('activation', `findOne`, {where: {ActivationKey: `${id}`}});
         if(!user){
-            return false;
+            let data = this.displays.find('/link_not_found');
+            this.response.render(data.page, data.ejs);
         }
         else{
             let query = JSON.parse(`{"Active":1, "ID":"${user.PenguinID}"}`);
             await this.database.update('penguin', query);
             await this.database.execute('activation', `destroy`, {where: {ActivationKey: `${id}`}});
-            log.success(`A user (PenguinID: ${user.PenguinID}) has just activated their account via email.`)
-            return true;
+            this.log.success(`A user (PenguinID: ${user.PenguinID}) has just activated their account via email.`)
+            let data = this.displays.find('/activated');
+            this.response.render(data.page, data.ejs);
         }
     }
 
@@ -48,11 +47,11 @@ class Email extends Base{
     }
 
     crash(user){
-        log.crash(`Flake is unable to connect to gmail, here are some potential issues:`)
-        log.crash(`1. incorrect gmail details.`)
-        log.crash(`2. less secure apps is not enabled in the security settings of the gmail/google account.`)
-        log.crash(`Please set activation to 0 in Configuration.js until you find a fix.`)
-        log.crash(`You may also want to either delete or manually activate (through the database) ${user.Username}'s account.`)
+        this.log.crash(`Flake is unable to connect to gmail, here are some potential issues:`)
+        this.log.crash(`1. incorrect gmail details.`)
+        this.log.crash(`2. less secure apps is not enabled in the security settings of the gmail/google account.`)
+        this.log.crash(`Please set activation to 0 in Configuration.js until you find a fix.`)
+        this.log.crash(`You may also want to either delete or manually activate (through the database) ${user.Username}'s account.`)
     }
 
 }
