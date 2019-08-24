@@ -41,7 +41,7 @@ class Database extends Base{
             this.connection = true;
         }
         catch(e){
-            /* log.crash(e) */
+            /* this.log.crash(e) */
             this.log.alert(`The database connection to ${this.database_name} has failed.`)
             this.log.alert(`Please consider reviewing the database details provided in Configuration.js`)
         }
@@ -69,7 +69,7 @@ class Database extends Base{
             await this[`${table}`].update({[`${row[0]}`]: `${query[`${row[0]}`]}`}, {where: {[`${row[1]}`]: `${query[`${row[1]}`]}`}});
         }
         catch(e){
-            /* log.crash(e); */
+            /* this.log.crash(e); */
             this.log.crash(`FILE: Engine/Database.js | LINE: 54`);
         }
     }
