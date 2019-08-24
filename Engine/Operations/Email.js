@@ -1,6 +1,5 @@
 "use strict";
 
-const nodemailer = require("nodemailer");
 const Base = require('../../Configuration'); 
 
 class Email extends Base{
@@ -36,7 +35,7 @@ class Email extends Base{
 
     async send_mail(user, id){
         try{
-            let transporter = await nodemailer.createTransport({service: 'Gmail', auth: {user: this.gmail_user, pass: this.gmail_pass}});
+            let transporter = await this.nodemailer.createTransport({service: 'Gmail', auth: {user: this.gmail_user, pass: this.gmail_pass}});
             await transporter.sendMail({to: user.Email, subject: `Activate your account for ${this.cpps_name}`, text: `Thank you for registering to ${this.cpps_name}. Please head over to http://${this.sub_domain}/activate/${id} to activate your penguin.`, }); /* Change to a more professional written email if you like */
         }
         catch(e){
