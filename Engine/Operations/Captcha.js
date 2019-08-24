@@ -8,9 +8,9 @@ class Captcha extends Base{
         this.request = request;
     }
 
-    calculate(recaptcha_url, callback) {
-        this._request(recaptcha_url, (err, resp, body) =>{                      
-            let recaptcha = JSON.parse(body);
+    async calculate(recaptcha_url, callback) {
+        await this._request(recaptcha_url, async (err, resp, body) =>{                      
+            let recaptcha = await JSON.parse(body);
             return callback(recaptcha.success);
         });
     }

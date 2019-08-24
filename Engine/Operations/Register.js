@@ -51,12 +51,10 @@ class Register extends Base{
 
     async count(row, value){
         let user_exist = await this.database.execute('penguin', `count`, {where: {[`${row}`]: [`${value}`]}});
-        if (user_exist != 0){ 
+        if (user_exist != 0) 
             return true; 
-        }
-        else{
-            return false;  
-        }
+
+        return false;  
     }
 
     async bcrypt(){
@@ -72,13 +70,17 @@ class Register extends Base{
 
     execute(){
         let recaptcha_url = this.captcha.form_url();
-        let data = this.displays.find('/captcha');
         this.captcha.calculate(recaptcha_url, (response) =>{
-            if(!response)
-                this.response.render(data.page, data.ejs);
-                
-            this.create();
+            this.handle_response(response);  
         })
+    }
+
+    handle_response(response){
+        let data = this.displays.find('/captcha');
+        if(!response)
+            return this.response.render(data.page, data.ejs);
+
+        this.create();
     }
 
     collect_body_data(){

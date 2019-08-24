@@ -7,28 +7,29 @@ const flash = require('connect-flash');
 const path = require('path');
 const log = require('./Console');
 const displays = require ('./Engine/Displays')
+const operations = require ('./Engine/Operations')
 
 class Configuration{
     constructor(){
         this.mysql();
         this.http();
         this.email_verification();
-        this.registration_settings();
         this.utils();
+        this.registration_settings();
     }
 
     mysql(){
         this.database_host = 'localhost';
-        this.database_username = 'root'; /* enter your database username here */
-        this.database_password = ''; /* enter your database password here */
+        this.database_username = 'root';
+        this.database_password = '';
         this.database_port = 3306;
-        this.database_name = 'Houdini'; 
+        this.database_name = 'Houdini';
     }
 
     http(){
         this.port = 4444;
-        this.site_key = ''; /* register a pair of keys from google recaptcha (v3) and enter the site key here */
-        this.secret_key = ''; /* register a pair of keys from google recaptcha (v3) and enter the secret key here */
+        this.site_key = '';
+        this.secret_key = '';
         this._request = request;
     }
 
@@ -48,6 +49,7 @@ class Configuration{
     /* Don't touch anything below unless you know what you are doing */
 
     utils(){
+        this.operations = new operations();
         this.displays = new displays(this.site_key);
         this.log = log;
     }

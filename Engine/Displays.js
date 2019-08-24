@@ -36,14 +36,12 @@ class Displays{
     find(link){
         let response = {};
         for(let urls in this.ejs){
-            if(link === urls){
+            if(link === urls)
                 response.ejs = this.ejs[urls];
-            }
         }
         for(let urls in this.pages){
-            if(link === urls){
+            if(link === urls)
                 response.page = this.pages[urls]
-            }
         }
         return response;
     }

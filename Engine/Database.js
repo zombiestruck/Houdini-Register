@@ -27,12 +27,11 @@ class Database extends Base{
     }
 
     async import(){
-        if(this.connection){
+        if(this.connection)
             this.penguin = await this.databaseConnection.import('../Data/Penguin');
             this.inventory = await this.databaseConnection.import('../Data/Inventory');
             this.activation = await this.databaseConnection.import('../Data/Activation');
             this.log.success(`Database connection successfully made to ${this.database_name}`)
-        }
     }
 
     async authentication(){
@@ -49,13 +48,11 @@ class Database extends Base{
 
     async execute(table, type, query){
         try{
-            if(query == ''){
+            if(query == '')
                 return await this[`${table}`][`${type}`]();
-            }
-            else{
-                let jsonQuery = JSON.stringify(eval(query));
-                return await this[`${table}`][`${type}`](JSON.parse(jsonQuery));
-            }
+            
+            let jsonQuery = JSON.stringify(eval(query));
+            return await this[`${table}`][`${type}`](JSON.parse(jsonQuery));
         }
         catch(e){
             /* this.log.crash(e); */

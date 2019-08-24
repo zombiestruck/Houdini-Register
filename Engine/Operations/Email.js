@@ -12,28 +12,26 @@ class Email extends Base{
     }
 
     async handle(user){
-        if(this.activation){
-            let id = Math.random().toString(26).slice(2);
+        let id = Math.random().toString(26).slice(2);
+        if(this.activation)
             await this.send_mail(user, id);
             await this.database.execute('activation', `create`, ({PenguinID: user.ID, ActivationKey: id}));
-        }
     }
 
     async execute(){
         let id = this.request.params.value;
+        let _data = this.displays.find('/link_not_found');
         let user = await this.database.execute('activation', `findOne`, {where: {ActivationKey: `${id}`}});
-        if(!user){
-            let data = this.displays.find('/link_not_found');
-            this.response.render(data.page, data.ejs);
-        }
-        else{
-            let query = JSON.parse(`{"Active":1, "ID":"${user.PenguinID}"}`);
-            await this.database.update('penguin', query);
-            await this.database.execute('activation', `destroy`, {where: {ActivationKey: `${id}`}});
-            this.log.success(`A user (PenguinID: ${user.PenguinID}) has just activated their account via email.`)
-            let data = this.displays.find('/activated');
-            this.response.render(data.page, data.ejs);
-        }
+        if(!user)
+            return this.response.render(_data.page, _data.ejs);
+
+        let query = JSON.parse(`{"Active":1, "ID":"${user.PenguinID}"}`);
+        await this.database.update('penguin', query);
+        await this.database.execute('activation', `destroy`, {where: {ActivationKey: `${id}`}});
+        this.log.success(`A user (PenguinID: ${user.PenguinID}) has just activated their account via email.`)
+        let data = this.displays.find('/activated');
+        this.response.render(data.page, data.ejs);
+
     }
 
     async send_mail(user, id){
