@@ -56,7 +56,7 @@ class Database extends Base{
         }
         catch(e){
             /* this.log.crash(e); */
-            this.log.crash(`FILE: Engine/Database.js | LINE: 43`); 
+            this.log.crash(`FILE: Engine/Database.js | LINE: 59`); 
         }
     }
 
@@ -67,7 +67,7 @@ class Database extends Base{
         }
         catch(e){
             /* this.log.crash(e); */
-            this.log.crash(`FILE: Engine/Database.js | LINE: 54`);
+            this.log.crash(`FILE: Engine/Database.js | LINE: 70`);
         }
     }
 }
