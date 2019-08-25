@@ -41,7 +41,7 @@ class Register extends Base{
             let color = this.penguinColor.replace('/colors/', '');
             await this.database.execute(`penguin`, `create`, ({ID: null, Username: this.username, Nickname: this.username, Approval: this.approval, Password: password, Email: this.email, Active: !this.activation, Color: color}));
             let user = await this.database.execute('penguin', `findOne`, {where: {Email: `${this.email}`}});
-            await this.database.execute(`inventory`, `create`, {PenguinID: user.ID, ItemID: this.color})
+            await this.database.execute(`inventory`, `create`, {PenguinID: user.ID, ItemID: color})
             this.activate_email.handle(user) /* No worries, if its set to 0 it WONT send. */
             this.log.success(`User ${this.username} has registered an account just now.`)
             let data = this.displays.find('/success');
