@@ -22,7 +22,7 @@ class Configuration{
         this.site_key = ''; /* Register a pair of keys from google recaptcha (v3) and fill in your site key here */
         this.secret_key = ''; /* Register a pair of keys from google recaptcha (v3) and fill in your secret key here */
 
-        this.activation = 1; /* Set this to 1 if you want to use the activate email feature and fill in the below: */
+        this.activation = 0; /* Set this to 1 if you want to use the activate email feature and fill in the below: */
         this.gmail_user = ''; /* Register a new GMAIL account as the email used to send the reset password link, or change the service from GMAIL to your preference.*/
         this.gmail_pass = ''; /* Enter the GMAIL accounts password here*/
         this.cpps_name = 'Flake'; /* The name of your CPPS that will appear in the activation email */
@@ -35,6 +35,7 @@ class Configuration{
 
         this.operations = new operations();
         this.displays = new displays(this.site_key);
+        this.error = this.displays.find('/error');;
         this.log = log;
         this.nodemailer = nodemailer;
         this._request = request;
