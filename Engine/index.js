@@ -17,7 +17,7 @@ class Engine extends Base{
             new Link(request, response, this.database).identify();
         });
 
-        this.flake.post('/', (request, response) => {
+        this.flake.post('/(:link)', (request, response) => {
             new Link(request, response, this.database).identify();
         });
 

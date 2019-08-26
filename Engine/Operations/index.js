@@ -8,26 +8,18 @@ class Operations{
 
     collect_urls(){
         this.urls = {}
-        this.urls[`/`] = 'Register';
-        this.urls['/activate/'] = 'Email';
+        this.urls[`create`] = 'Register';
+        this.urls['activate'] = 'Email';
 
         for(let urls in this.urls){
             this.url_array.push(urls) 
         }
     }
-    
-    match(request, response, database){
-        let url = request._parsedUrl.pathname;
-        let email_activation_url = url.slice(0,10); 
-        if (this.url_array.includes(email_activation_url))
-           return this.find_operation(email_activation_url, request, response, database);
-        
-        return this.find_operation(url, request, response, database);
-    }
 
-    find_operation(url, request, response, database){
+    match(request, response, database){
+        let url = request.params.link;
         for(let urls in this.urls){
-            if(url === urls){             
+            if(url === urls){           
                 let Operation = require(`./${this.urls[urls]}`)
                 new Operation(request, response, database).execute();
             }
