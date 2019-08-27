@@ -35,7 +35,7 @@ class Configuration{
 
         this.operations = new operations();
         this.displays = new displays(this.site_key);
-        this.error = this.displays.find('/error');;
+        this.error = this.displays.find('/error');
         this.log = log;
         this.nodemailer = nodemailer;
         this._request = request;

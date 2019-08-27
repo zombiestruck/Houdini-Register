@@ -21,7 +21,7 @@ class Engine extends Base{
             new Link(request, response, this.database).identify();
         });
 
-        this.flake.get(`/(:link)/(:value)`, async (request, response) => {
+        this.flake.get(`/(:link)/(:value)`, (request, response) => {
             new Link(request, response, this.database).identify();
         });
     }
