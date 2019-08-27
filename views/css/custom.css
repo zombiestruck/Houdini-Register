@@ -1,32 +1,51 @@
+@font-face {font-family: "Burbank Small";
+  src: url("https://db.onlinewebfonts.com/t/e6ef295909045a8fb440d1b5f073ed4e.eot"); /* IE9*/
+  src: url("https://db.onlinewebfonts.com/t/e6ef295909045a8fb440d1b5f073ed4e.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+  url("https://db.onlinewebfonts.com/t/e6ef295909045a8fb440d1b5f073ed4e.woff2") format("woff2"), /* chrome firefox */
+  url("https://db.onlinewebfonts.com/t/e6ef295909045a8fb440d1b5f073ed4e.woff") format("woff"), /* chrome firefox */
+  url("https://db.onlinewebfonts.com/t/e6ef295909045a8fb440d1b5f073ed4e.ttf") format("truetype"), /* chrome firefox opera Safari, Android, iOS 4.2+*/
+  url("https://db.onlinewebfonts.com/t/e6ef295909045a8fb440d1b5f073ed4e.svg#Burbank Small") format("svg"); /* iOS 4.1- */
+}
+
 .create-account {
-    width: 300px;
-    margin: 0 auto;
+  border-radius: 5px;
+  box-sizing: content-box;
+  width: 400px;
+  height: 530px;
+  background-color:white;
+  margin: 0 auto;
 }
-.create-account h1 {
-    text-align: center;
-    color: #000000;
-    font-size: 24px;
-    padding: 20px 0 20px 0;
-    margin-top: 0;
-   margin-bottom: 2rem;
-   font-weight: 300;
-   line-height: 1.25;
-   letter-spacing: -.1rem;
-   display:block;
-   margin-block-start: 0.83em;
-   margin-block-end: 0.83em;
-   margin-inline-start: 0px;
-   margin-inline-end: 0px;
-   font-size: 2rem;
+
+h1 {
+  text-align: center;
+  color: #18244a;
+  font-size: 24px;
+ margin-block-start: 0.50em;
+ margin-block-end: 0.83em;
+ margin-inline-start: 0px;
+ margin-inline-end: 0px;
+ font-size: 2rem;
+ font-family: "Burbank Small"
 }
+
+
 .create-account input[type="password"],
 .create-account input[type="text"] {
-    width: 100%;
+    width: 70%;
+    margin-block-start: 1.00em;
     padding: 15px;
-    border: 1px solid #dddddd;
-    margin-bottom: 15px;
+    border: 1px solid #dddddd;;
     box-sizing:border-box;
+    font-family: "Burbank Small";
 }
+
+.create-account input[type="submit"]{
+  margin-block-start: 1.00em;
+  font-size: 15px;
+    font-family: "Burbank Small";
+}
+
+
 
 .emu {
     -webkit-animation-duration: 1s;
@@ -79,72 +98,72 @@
   }
   .blue {
     background: #00346B;
-      margin-left: 405px;
+      margin-left: 513px;
       margin-top: -175px;
   }
   .purple {
     background: #5A0093;
-      margin-left: 405px;
+      margin-left: 513px;
       margin-top: -174px;
   }
   .green{
     background: #009B01;
-    margin-left: 428px;
+    margin-left: 535px;
     margin-top: -175px;
   }
   .brown {
     background: #8F6004;
-      margin-left: 428px;
+      margin-left: 535px;
       margin-top: -174px;
   }
   .pink {
     background: #FF3198;
-    margin-left: 451px;
+    margin-left: 558px;
     margin-top: -175px;
   }
   .lightpink {
     background: #F9686B;
-    margin-left: 451px;
+    margin-left: 558px;
     margin-top: -174px;
   }
   .black {
     background: #333333;
-    margin-left: 474px;
+    margin-left: 581px;
     margin-top: -175px;
   }
   .darkgreen {
     background: #006800;
-    margin-left: 474px;
+    margin-left: 581px;
     margin-top: -174px;
   }
   .red {
     background: #CC0008;
-    margin-left: 497px;
+    margin-left: 604px;
     margin-top: -175px;
   }
   .lightblue {
     background: #0099CF;
-    margin-left: 497px;
+    margin-left: 604px;
     margin-top: -174px;
   }
   .orange {
     background: #FC6800;
-    margin-left: 520px;
+    margin-left: 627px;
     margin-top: -175px;
   }
   .lightgreen {
     background: #89E20E;
-    margin-left: 520px;
+    margin-left: 627px;
     margin-top: -174px;
   }
   .yellow {
     background: #FFCA00;
-    margin-left: 543px;
+    margin-left: 650px;
     margin-top: -175px;
   }
   .grey {
     background: #92A2A2;
-    margin-left: 543px;
+    margin-left: 650px;
     margin-top: -174px;
   }
 

@@ -66,7 +66,7 @@ function changeImage(imgName){
     var colorId = imgName.replace("./colors/", "");
     colorId = colorId.replace(".png", "");
     document.getElementById("penguinColorInput").value = colorId;
-    for (i = 1; i < 15; i++) {
+    for (i = 0; i < 15; i++) {
         document.getElementById("c" + i).style.opacity = 0.5;
     }
     document.getElementById("c" + colorId).style.opacity = 1;

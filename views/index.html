@@ -12,6 +12,7 @@
   <link rel="icon" type="image/png" href="/css/penguin.png">
   <link rel="stylesheet" href="/css/bootstrap.min.css">
   <link rel="stylesheet" href="/css/custom.css">
+
   <script src="/js/custom.js"></script>
   <script src="https://www.google.com/recaptcha/api.js?render=<%= site_key %>"></script>
   <script>
@@ -34,40 +35,41 @@
         <% if (success_msg != '') { %>
             <div class="alert alert-success" role="alert"><%= success_msg %></div>
             <% } %>
-
-
-    <div class="create-account">
+<center> 
         <h1 class="text-center fade1 upward emu">Houdini Registration</h1>
+    <div class="create-account">
         <form action="/create" method="POST" name="reg" onsubmit="">
             <input type="text" name="username" id="username" oninput="usernamePurity();" placeholder="Username" required>
             <input type="password" name="password" id="password" oninput="passwordCheck()" placeholder="Password" required>
             <input type="password" name="password_confirm" id="password_confirm" oninput="passwordConfirm()" placeholder="Confirm Your Password" required>
             <input type="text" name="email" id="email" oninput="emailCheck()" placeholder="Email" required>
+            <br>
             <input type="submit" class="btn btn-primary">
             <input type="hidden" name="recaptcha_response" id="recaptchaResponse">
             <input type="hidden" value="1" id="penguinColorInput" name="penguinColor" />
         </form>
-
+    
         <div class="foo blue" id="c1" style="opacity: 1;" onclick="changeImage('/colors/1.png')"></div>
-	<div class="foo green" id="c2" style="opacity: 0.5;" onclick="changeImage('/colors/2.png')"></div>
-	<div class="foo pink" id="c3" style="opacity: 0.5;" onclick="changeImage('/colors/3.png')"></div>
-	<div class="foo black" id="c4" style="opacity: 0.5;" onclick="changeImage('/colors/4.png')"></div>
-	<div class="foo red" id="c5" style="opacity: 0.5;" onclick="changeImage('/colors/5.png')"></div>
-	<div class="foo orange" id="c6" style="opacity: 0.5;" onclick="changeImage('/colors/6.png')"></div>
-	<div class="foo yellow" id="c7" style="opacity: 0.5;" onclick="changeImage('/colors/7.png')"></div>
-	<br>
-	<div class="foo purple" id="c8" style="opacity: 0.5;" onclick="changeImage('/colors/8.png')"></div>
-	<div class="foo brown" id="c9" style="opacity: 0.5;" onclick="changeImage('/colors/9.png')"></div>
-	<div class="foo lightpink" id="c10" style="opacity: 0.5;" onclick="changeImage('/colors/10.png')"></div>
-	<div class="foo darkgreen" id="c11" style="opacity: 0.5;" onclick="changeImage('/colors/11.png')"></div>
-	<div class="foo lightblue" id="c12" style="opacity: 0.5;" onclick="changeImage('/colors/12.png')"></div>
-	<div class="foo lightgreen" id="c13" style="opacity: 0.5;" onclick="changeImage('/colors/13.png')"></div>
-	<div class="foo grey" id="c14" style="opacity: 0.5;" onclick="changeImage('/colors/14.png')"></div>
+        <div class="foo green" id="c2" style="opacity: 0.5;" onclick="changeImage('/colors/2.png')"></div>
+        <div class="foo pink" id="c3" style="opacity: 0.5;" onclick="changeImage('/colors/3.png')"></div>
+        <div class="foo black" id="c4" style="opacity: 0.5;" onclick="changeImage('/colors/4.png')"></div>
+        <div class="foo red" id="c5" style="opacity: 0.5;" onclick="changeImage('/colors/5.png')"></div>
+        <div class="foo orange" id="c6" style="opacity: 0.5;" onclick="changeImage('/colors/6.png')"></div>
+        <div class="foo yellow" id="c7" style="opacity: 0.5;" onclick="changeImage('/colors/7.png')"></div>
+        <br>
+        <div class="foo purple" id="c8" style="opacity: 0.5;" onclick="changeImage('/colors/8.png')"></div>
+        <div class="foo brown" id="c9" style="opacity: 0.5;" onclick="changeImage('/colors/9.png')"></div>
+        <div class="foo lightpink" id="c10" style="opacity: 0.5;" onclick="changeImage('/colors/10.png')"></div>
+        <div class="foo darkgreen" id="c11" style="opacity: 0.5;" onclick="changeImage('/colors/11.png')"></div>
+        <div class="foo lightblue" id="c12" style="opacity: 0.5;" onclick="changeImage('/colors/12.png')"></div>
+        <div class="foo lightgreen" id="c13" style="opacity: 0.5;" onclick="changeImage('/colors/13.png')"></div>
+        <div class="foo grey" id="c14" style="opacity: 0.5;" onclick="changeImage('/colors/14.png')"></div>
+    
+        <img id="imgDisp" alt="" src="/colors/1.png" style="margin-left:500px;margin-top: -597px;"/>
+        </div>
+    
 
-	<img id="imgDisp" alt="" src="/colors/1.png" style="margin-left:400px;margin-top: -597px;"/>
-    </div>
- 
-          
+</center>
 
 
 </body>
