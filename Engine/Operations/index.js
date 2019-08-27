@@ -11,9 +11,8 @@ class Operations{
         this.urls[`create`] = 'Register';
         this.urls['activate'] = 'Email';
 
-        for(let urls in this.urls){
-            this.url_array.push(urls) 
-        }
+        for(let urls in this.urls)
+            this.url_array.push(urls);
     }
 
     match(request, response, database){
