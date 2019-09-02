@@ -24,11 +24,13 @@ Just execute `npm install` to install the dependencies all at once.
 
 - The only file you have to edit is Configuration.js, leave everything else to be otherwise it's going to become a bit complicated.
 
-- Register your recaptcha keys from google recaptcha (v3). Add your site and secret key here: https://i.imgur.com/MBq4Oxm.png
+- Register your recaptcha keys from google recaptcha (v3). Add your site and secret key here: https://imgur.com/a/RwVCvh1
 
-- When running this on your site, you need your sub-domain to be proxying off port 4444 (or whatever port you set in Configuration.js). So edit your nginx or apache configuration, add this line `proxy_pass http://localhost:3000/;`. This might be helpful: https://www.linode.com/docs/web-servers/nginx/use-nginx-reverse-proxy/
+- When running this register, you need your sub-domain to be reverse proxying off port 4444 so that you can visit your registration link directly, instead of having :4444 added at the end of it. So edit your nginx configuration, add this line `proxy_pass http://localhost:4444/;`. Make sure the default placed line `try_files $uri $uri/ =404;` is removed. You can find a similar alternative for apache too. If you choose to not reverse proxy, you will have to visit the link via subdomain:4444 (adding :3000 on the end of the URL). This is not recommended, although is still possible. Make sure you keep your panel files away from your web-server, which means DON'T put them in /var/www/html or /var/www.
 
 - Optional email activation, you can ignore it and let it not work by leaving activation to 0 in Configuration.js. But for it to work, you will need to set activation to 1, you need to be willing to give a working gmail account, probably one dedicated to the CPPS. You then need to fill out the following details below: https://snag.gy/PiWmxs.jpg. If done correctly, with no error showing in terminal it should send an activation email looking like this: https://snag.gy/P3a8QG.jpg.
+
+
 
 Any issues or suggestions, just email me: root@rsakeys.org
 
