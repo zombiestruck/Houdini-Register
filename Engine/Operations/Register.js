@@ -61,7 +61,7 @@ class Register extends Base{
         let MD5 = md5(this.password).toUpperCase(); 
         let password = MD5.substr(16, 16) + MD5.substr(0, 16);  
         password += 'houdini'; 
-        password += 'Y(02.>\'H}t":E1';
+        password += this.salt;
         password = md5(password);
         password = password.substr(16, 16) + password.substr(0, 16);
         let bcrypt_pw = await bcrypt.hash(password, 12);
