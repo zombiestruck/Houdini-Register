@@ -27,11 +27,15 @@ class Database extends Base{
     }
 
     async import(){
-        if(this.connection)
+        if(this.connection){
             this.penguin = await this.databaseConnection.import('../Data/Penguin');
             this.inventory = await this.databaseConnection.import('../Data/Inventory');
             this.activation = await this.databaseConnection.import('../Data/Activation');
             this.log.success(`Database connection successfully made to ${this.database_name}`)
+        }
+        else{
+            this.log.crash(`Tables not imported, please check your database connection.`);
+        }
     }
 
     async authentication(){
@@ -55,8 +59,7 @@ class Database extends Base{
             return await this[`${table}`][`${type}`](JSON.parse(jsonQuery));
         }
         catch(e){
-            /* this.log.crash(e); */
-            this.log.crash(`FILE: Engine/Database.js | LINE: 59`); 
+            this.log.crash(e); 
         }
     }
 
@@ -66,8 +69,7 @@ class Database extends Base{
             await this[`${table}`].update({[`${row[0]}`]: `${query[`${row[0]}`]}`}, {where: {[`${row[1]}`]: `${query[`${row[1]}`]}`}});
         }
         catch(e){
-            /* this.log.crash(e); */
-            this.log.crash(`FILE: Engine/Database.js | LINE: 70`);
+            this.log.crash(e);
         }
     }
 }
