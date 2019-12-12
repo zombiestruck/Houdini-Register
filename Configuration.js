@@ -18,8 +18,10 @@ class Configuration{
         this.database_port = 3306;
         this.database_name = 'Houdini';
         this.database_dialect = 'mysql';
-
-        this.salt = 'Y(02.>\'H}t":E1'; /* If you are using the AS3 client, just change this salt to: 'a1ebe00441f5aecb185d0ec178ca2305Y(02.>'H}t\":E1_root' */
+        
+        this.AS2_SALT = 'Y(02.>\'H}t":E1';
+        this.AS3_SALT = `a1ebe00441f5aecb185d0ec178ca2305Y(02.>'H}t\":E1_root`;
+        this.salt = this.AS2_SALT; // Use AS2 salt by default
         this.port = 4444;
         this.site_key = ''; /* Register a pair of keys from google recaptcha (v3) and fill in your site key here */
         this.secret_key = ''; /* Register a pair of keys from google recaptcha (v3) and fill in your secret key here */
