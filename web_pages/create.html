@@ -3,17 +3,17 @@
 <head>
 
   <meta charset="utf-8">
-  <title>CP | Registration</title>
+  <title>Houdini | Registration</title>
   <meta name="description" content="">
   <meta name="author" content="">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="icon" type="image/png" href="/css/penguin.png">
+  <link rel="icon" type="image/png" href="/img/penguin.png">
   <link rel="stylesheet" href="/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/css/custom.css">
+  <link rel="stylesheet" href="/css/register.css">
 
-  <script src="/js/custom.js"></script>
+  <script src="/js/register.js"></script>
   <script src="https://www.google.com/recaptcha/api.js?render=<%= site_key %>"></script>
   <script>
     grecaptcha.ready(function () {
@@ -28,17 +28,17 @@
 
 <body>
 
-        <% if (error_msg != '') { %>
-            <div class="alert alert-danger" role="alert"><%= error_msg %></div>
+        <% if (error_message != '') { %>
+            <div class="alert alert-danger" role="alert"><%= error_message %></div>
             <% } %>
 
-        <% if (success_msg != '') { %>
-            <div class="alert alert-success" role="alert"><%= success_msg %></div>
+        <% if (success_message != '') { %>
+            <div class="alert alert-success" role="alert"><%= success_message %></div>
             <% } %>
 <center> 
         <h1 class="text-center fade1 upward emu">Houdini Registration</h1>
     <div class="create-account">
-        <form action="/create" method="POST" name="reg" onsubmit="">
+        <form action="/" method="POST" name="reg" onsubmit="">
             <input type="text" name="username" id="username" oninput="usernamePurity();" placeholder="Username" required>
             <input type="password" name="password" id="password" oninput="passwordCheck()" placeholder="Password" required>
             <input type="password" name="password_confirm" id="password_confirm" oninput="passwordConfirm()" placeholder="Confirm Your Password" required>
@@ -46,7 +46,7 @@
             <br>
             <input type="submit" class="btn btn-primary">
             <input type="hidden" name="recaptcha_response" id="recaptchaResponse">
-            <input type="hidden" value="1" id="penguinColorInput" name="penguinColor" />
+            <input type="hidden" value="1" id="penguinColorInput" name="penguin_color" />
         </form>
     
         <div class="foo blue" id="c1" style="opacity: 1;" onclick="changeImage('/colors/1.png')"></div>
