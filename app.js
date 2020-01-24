@@ -176,8 +176,11 @@ app.get('/activate/(:id)', async (request, response) =>{
     }
 })
 
+app.get('*', (request, response) => {
+    response.send('This link was not found.')
+})
 
-app.listen(config.port, async () => {
+app.listen(config.port, () => {
     success(`running houdini register on port: ${config.port}.`)
 })
 
