@@ -158,13 +158,7 @@ async function recaptcha_test(recaptcha_url){
         const score_return = await request(recaptcha_url)
         const score = JSON.parse(score_return)
         const result = score.success
-        if(result){
-            return true
-        }
-        
-        else{
-            return false
-        }
+        return result
     }
     catch(e){
         error(e)
@@ -174,13 +168,7 @@ async function recaptcha_test(recaptcha_url){
 async function username_taken(username){
     try{
         const username_count = await penguin.count({where: {Username: username}})
-        if (username_count >= 1){
-            return true 
-        }
-
-        else{
-            return false
-        }
+        return username_count
     }
     catch(e){
         error(e)
@@ -190,12 +178,7 @@ async function username_taken(username){
 async function email_taken(email){
     try{
         const email_count = await penguin.count({where: {Email: email}})
-        if (email_count >= 1){
-            return true 
-        }
-        else{
-            return false
-        }
+        return email_count
     }
     catch(e){
         error(e)
