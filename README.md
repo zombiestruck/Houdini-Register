@@ -2,7 +2,7 @@
 
 ## Features
 
- - Basic nodeJS application that handles user registration for [Houdini](https:/github.com/Solero/Houdini)
+ - Basic nodeJS application that handles user registration for [Houdini](/Solero/Houdini)
 
  - Handles activation via nodemailer
 
