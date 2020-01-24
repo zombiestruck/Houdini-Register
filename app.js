@@ -4,7 +4,7 @@ const ejs = require('ejs')
 const body_parser = require('body-parser')
 const path = require('path')
 const request = require('request-promise')
-const md5 = require('md5')
+const { createHash } = require('crypto')
 const bcrypt = require('bcryptjs')
 const helmet = require('helmet')
 const nodemailer = require('nodemailer')
@@ -222,6 +222,7 @@ async function send_activation_mail(player){
 }
 
 async function generate_bcrypt_password(raw_password){
+    const md5 = (str) => createHash('md5').update(str).digest('hex')
     let encrypted_password = md5(raw_password).toUpperCase()
     encrypted_password = encrypted_password.substr(16, 16) + encrypted_password.substr(0, 16)
     encrypted_password += 'houdini'
