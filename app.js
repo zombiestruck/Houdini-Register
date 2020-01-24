@@ -103,8 +103,17 @@ app.post('/', async (request, response) =>{
                 Color: color,
             })
 
-            const player = await penguin.findOne({where: {Email: email_given}})
-            await inventory.create({PenguinID: player.ID, ItemID: color})
+            const player = await penguin.findOne({
+                where: {
+                    Email: email_given
+                }
+            })
+
+            await inventory.create({
+                PenguinID: player.ID, 
+                ItemID: color
+            })
+
             if(config.activation){
                 await send_activation_mail(player)
             }
@@ -124,7 +133,11 @@ app.post('/', async (request, response) =>{
 app.get('/activate/(:id)', async (request, response) =>{
     try{
         const activation_key = request.params.id
-        const player_activated = await activation.findOne({where: {ActivationKey: activation_key}})
+        const player_activated = await activation.findOne({
+            where: {
+                ActivationKey: activation_key
+            }
+        })
         if(!player_activated){
             response.render('create.html', {
                 success_message: '',
@@ -133,9 +146,24 @@ app.get('/activate/(:id)', async (request, response) =>{
             })
         }
         else{
-            await penguin.update({Active: 1}, {where: {ID: player_activated.PenguinID}})
-            await activation.destroy({where: {ActivationKey: player_activated.ActivationKey}})
+
+            await penguin.update({
+                Active: 1
+            }, 
+            {
+                where: {
+                    ID: player_activated.PenguinID
+                }
+            })
+
+            await activation.destroy({
+                where: {
+                    ActivationKey: player_activated.ActivationKey
+                }
+            })
+
             success(`PenguinID ${player_activated.PenguinID} has successfully activated their account.`)
+
             response.render('create.html', {
                 success_message: 'Congratulations you have successfully activated your account. You may now login.',
                 error_message: '', 
@@ -167,7 +195,11 @@ async function recaptcha_test(recaptcha_url){
 
 async function username_taken(username){
     try{
-        const username_count = await penguin.count({where: {Username: username}})
+        const username_count = await penguin.count({
+            where: {
+                Username: username
+            }
+        })
         return username_count
     }
     catch(e){
@@ -177,7 +209,11 @@ async function username_taken(username){
 
 async function email_taken(email){
     try{
-        const email_count = await penguin.count({where: {Email: email}})
+        const email_count = await penguin.count({
+            where: {
+                Email: email
+            }
+        })
         return email_count
     }
     catch(e){
